@@ -1,0 +1,208 @@
+applicationConfig:
+  tickPeriodMillis: 300
+
+consoleConfig:
+  cellIconCount: 4
+
+islandConfig:
+  rows: 100
+  cols: 20
+
+  population:
+    Wolf: 100
+    Boa: 10000
+    Fox: 10000
+    Bear: 100
+    Eagle: 10000
+    Horse: 500
+    Deer: 500
+    Rabbit: 100000
+    Mouse: 100000
+    Goat: 1000
+    Sheep: 1000
+    Boar: 100
+    Buffalo: 100
+    Duck: 1000
+    Grass: 400000
+    Caterpillar: 10
+
+  cellCapacity:
+    Wolf: 30
+    Boa: 30
+    Fox: 30
+    Bear: 5
+    Eagle: 20
+    Horse: 20
+    Deer: 20
+    Rabbit: 150
+    Mouse: 500
+    Goat: 140
+    Sheep: 140
+    Boar: 50
+    Buffalo: 10
+    Duck: 200
+    Grass: 200
+    Caterpillar: 1000
+
+globalOrganismConfig:
+  starvation: 25 # as a percentage of complete saturation per tick
+  lossWeight: 25 # as a percentage of max weight per tick
+  dying: 5 # a number of ticks
+
+organisms:
+  Wolf:
+    icon: 🐺
+    maxWeight: 50
+    maxSpeed: 3
+    completeSaturation: 8 # kilograms
+    preys:
+      Horse: 10 # chance to catch a prey in percent
+      Deer: 15
+      Rabbit: 60
+      Mouse: 80
+      Goat: 60
+      Sheep: 70
+      Boar: 15
+      Buffalo: 10
+      Duck: 40
+
+  Boa:
+    icon: 🐍
+    maxWeight: 15
+    maxSpeed: 1
+    completeSaturation: 3
+    preys:
+      Fox: 15
+      Rabbit: 20
+      Mouse: 40
+      Duck: 10
+
+  Fox:
+    icon: 🦊
+    maxWeight: 8
+    maxSpeed: 2
+    completeSaturation: 2
+    preys:
+      Rabbit: 70
+      Mouse: 90
+      Duck: 60
+      Caterpillar: 40
+
+  Bear:
+    icon: 🐻
+    maxWeight: 500
+    maxSpeed: 2
+    completeSaturation: 80
+    preys:
+      Boa: 80
+      Horse: 40
+      Deer: 80
+      Rabbit: 80
+      Mouse: 90
+      Goat: 70
+      Sheep: 70
+      Boar: 50
+      Buffalo: 20
+      Duck: 10
+
+  Eagle:
+    icon: 🦅
+    maxWeight: 6
+    maxSpeed: 3
+    completeSaturation: 1
+    preys:
+      Fox: 10
+      Rabbit: 90
+      Mouse: 90
+      Duck: 80
+
+  Horse:
+    icon: 🐎
+    maxWeight: 400
+    maxSpeed: 4
+    completeSaturation: 60
+    preys:
+      Grass: 100
+
+  Deer:
+    icon: 🦌
+    maxWeight: 300
+    maxSpeed: 4
+    completeSaturation: 50
+    preys:
+      Grass: 100
+
+  Rabbit:
+    icon: 🐇
+    maxWeight: 2
+    maxSpeed: 2
+    completeSaturation: 0.45
+    preys:
+      Grass: 100
+
+  Mouse:
+    icon: 🐁
+    maxWeight: 0.05
+    maxSpeed: 1
+    completeSaturation: 0.01
+    preys:
+      Caterpillar: 90
+      Grass: 100
+
+  Goat:
+    icon: 🐐
+    maxWeight: 60
+    maxSpeed: 3
+    completeSaturation: 10
+    preys:
+      Grass: 100
+
+  Sheep:
+    icon: 🐑
+    maxWeight: 70
+    maxSpeed: 3
+    completeSaturation: 15
+    preys:
+      Grass: 100
+
+  Boar:
+    icon: 🐗
+    maxWeight: 400
+    maxSpeed: 2
+    completeSaturation: 50
+    preys:
+      Mouse: 50
+      Caterpillar: 90
+      Grass: 100
+
+  Buffalo:
+    icon: 🐃
+    maxWeight: 700
+    maxSpeed: 3
+    completeSaturation: 100
+    preys:
+      Grass: 100
+
+  Duck:
+    icon: 🦆
+    maxWeight: 1
+    maxSpeed: 4
+    completeSaturation: 0.15
+    preys:
+      Caterpillar: 90
+      Grass: 100
+
+  Caterpillar:
+    icon: 🐛
+    maxWeight: 0.01
+    maxSpeed: 0
+    completeSaturation: 0
+    preys:
+      Grass: 100
+
+  Grass:
+    icon: 🌱
+    maxWeight: 1
+    maxSpeed: 0
+    completeSaturation: 0
+    preys: {}
