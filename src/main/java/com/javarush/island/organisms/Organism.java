@@ -92,8 +92,8 @@ public class Organism implements Cloneable {
             return;
         }
         int maxSpeed = config.getMaxSpeed();
-        if (maxSpeed == 0) {
-            throw new RuntimeException("Max speed has to be greater than 0");
+        if (maxSpeed <= 0) {
+            return;
         }
         Set<Cell> visitedCells = new HashSet<>();
         int speed = Utils.random(1, (maxSpeed + 1));
@@ -225,8 +225,11 @@ public class Organism implements Cloneable {
 
     private void catchPreys() {
         double completeSaturation = config.getCompleteSaturation();
-        if (completeSaturation == 0) {
-            throw new RuntimeException("CompleteSaturation has to be greater than 0");
+        if (completeSaturation <= 0) {
+            return;
+        }
+        if (completeSaturation >= saturationKilos) {
+            return;
         }
         Set<String> preysNames = config.getPreys().keySet();
         List<Organism> preys = cell.collectPreys(preysNames);
