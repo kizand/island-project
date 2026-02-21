@@ -25,6 +25,37 @@ public class OrganismGroupsIterator {
         return cellIndex <= lastCellIndex;
     }
 
+    public OrganismGroup nextGroup() {
+        Map<Integer, Organism> group = null;
+        Cell groupCell = null;
+        synchronized (this) {
+            while (cellIndex <= lastCellIndex) {
+                if (groupsIterator.hasNext()) {
+                    group = groupsIterator.next();
+                    if (!group.isEmpty()) {
+                        groupCell = cell;
+                        break;
+                    } else {
+                        group = null;
+                    }
+                } else {
+                    cellIndex++;
+                    if (cellIndex <= lastCellIndex) {
+                        int row = cellIndex / cols;
+                        int col = cellIndex % cols;
+                        cell = cells[row][col];
+                        groupsIterator = cell.getGroupsIterator();
+                    }
+                }
+            }
+        }
+        if (group != null) {
+            return new OrganismGroup(group, groupCell);
+        } else {
+            return null;
+        }
+    }
+
     public void reset() {
         cellIndex = 0;
         cell = cells[0][0];

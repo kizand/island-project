@@ -20,4 +20,14 @@ public class OrganismGroup {
     public Cell getCell() {
         return cell;
     }
+
+    public Children reproduction() {
+        Collection<Organism> organismsInGroup = group.values();
+        if (organismsInGroup.isEmpty()) {
+            throw new IllegalStateException("No organisms in group");
+        }
+        Organism organism = organismsInGroup.iterator().next();
+        List<Organism> list = organism.reproduction(organismsInGroup);
+        return list != null ? new Children(list, cell) : null;
+    }
 }
