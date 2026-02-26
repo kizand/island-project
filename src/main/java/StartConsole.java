@@ -4,7 +4,7 @@ import com.javarush.island.view.ConsoleView;
 import com.javarush.island.view.View;
 
 /**
- * Точка входа.
+ * Точка входа
  */
 
 public class StartConsole {
