@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Settings {
 
-    private static final String SETTINGS_PATH = "kizand/settings";
+    private static final String SETTINGS_PATH = "kizand/settings.yaml";
     private static final Settings settings = load();
     private ApplicationConfig applicationConfig;
     private ConsoleConfig consoleConfig;
